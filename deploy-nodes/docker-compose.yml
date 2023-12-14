@@ -3,7 +3,7 @@ services:
   patroni:
     image: patroni:latest
     build:
-      context: ../
+      context: .
       dockerfile: ./Dockerfile
     networks:
       - postgres-backend
@@ -15,7 +15,7 @@ services:
       - ../../../pg-cluster-volumes/postgres-data:/var/lib/postgresql/data
     environment:
       TZ: Asia/Riyadh
-      PATRONI_NAME: member_2
+      PATRONI_NAME: member_${HOSTNAME}
       PATRONI_POSTGRESQL_DATA_DIR: /var/lib/postgresql/data/node
       PATRONI_CONSUL_HOST: http://34.194.97.9:8500
       PATRONI_CONSUL_URL: http://34.194.97.9:8500/v1/
