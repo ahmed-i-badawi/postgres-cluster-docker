@@ -1,0 +1,8 @@
+version: '3'
+services:
+  haproxy:
+    image: haproxy
+    ports:
+      - "5432:5432"
+      - "5433:5433"
+    restart: unless-stopped

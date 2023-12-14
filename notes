@@ -1,0 +1,3 @@
+8008 Patroni API (HAProxy can check which node is master by checking port 8008)
+5432 write connection (ent to master database node)
+5433 read only connection
