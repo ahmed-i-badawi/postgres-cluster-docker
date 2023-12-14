@@ -17,8 +17,8 @@ services:
       TZ: Asia/Riyadh
       PATRONI_NAME: member_${HOSTNAME}
       PATRONI_POSTGRESQL_DATA_DIR: /var/lib/postgresql/data/node
-      PATRONI_CONSUL_HOST: http://34.194.97.9:8500
-      PATRONI_CONSUL_URL: http://34.194.97.9:8500/v1/
+      PATRONI_CONSUL_HOST: http://${HOSTNAME}:8500
+      PATRONI_CONSUL_URL: http://${HOSTNAME}:8500/v1/
       # PATRONI_CONSUL_HOST: http://consul-ip:8500
       # PATRONI_CONSUL_URL: http://consul-ip:8500/v1/
     restart: unless-stopped
