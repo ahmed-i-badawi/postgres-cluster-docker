@@ -1,0 +1,17 @@
+FROM postgres
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends g++ python3-dev libffi-dev libssl-dev python3-venv libpq-dev && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+# Create and activate a virtual environment
+RUN python3 -m venv /venv
+ENV PATH="/venv/bin:$PATH"
+
+COPY requirements.txt /requirements.txt
+RUN pip install --upgrade pip setuptools wheel && \
+    pip install -r /requirements.txt
+
+COPY patroni.yml /patroni.yml
+ENTRYPOINT ["patroni", "patroni.yml"]
