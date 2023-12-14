@@ -12,7 +12,7 @@ services:
       - "6432:5432"
     user: postgres
     volumes:
-      - ../volumes/postgres-data:/var/lib/postgresql/data
+      - ../../../pg-cluster-volumes/postgres-data:/var/lib/postgresql/data
     environment:
       TZ: Asia/Riyadh
       PATRONI_NAME: member_1
@@ -59,7 +59,7 @@ services:
       - "8500:8500"
       - "8600:8600/udp"
     volumes:
-      - ../volumes/consul-data:/data
+      - ../../../pg-cluster-volumes/consul-data:/data
     restart: unless-stopped
     command: agent -server -advertise 34.194.97.9 -bootstrap-expect 2 -client 0.0.0.0 -retry-join 34.194.97.9 -retry-join 34.205.236.241 retry-join 34.238.66.141
 
