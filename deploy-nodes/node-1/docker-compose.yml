@@ -3,8 +3,8 @@ services:
   patroni:
     image: patroni:latest
     build:
-      context: .
-      dockerfile: ./dockerfile
+      context: ../
+      dockerfile: ./Dockerfile
     networks:
       - postgres-backend
     ports:
@@ -16,9 +16,11 @@ services:
     environment:
       TZ: Asia/Riyadh
       PATRONI_NAME: member_1
-      PATRONI_POSTGRESQL_DATA_DIR: /var/lib/postgresql/data/node1
-      PATRONI_CONSUL_HOST: http://consul-ip:8500
-      PATRONI_CONSUL_URL: http://consul-ip:8500/v1/
+      PATRONI_POSTGRESQL_DATA_DIR: /var/lib/postgresql/data/node
+      PATRONI_CONSUL_HOST: http://34.194.97.9:8500
+      PATRONI_CONSUL_URL: http://34.194.97.9:8500/v1/
+      # PATRONI_CONSUL_HOST: http://consul-ip:8500
+      # PATRONI_CONSUL_URL: http://consul-ip:8500/v1/
     restart: unless-stopped
 
   pgbouncer:
@@ -59,7 +61,7 @@ services:
     volumes:
       - ../volumes/consul-data:/data
     restart: unless-stopped
-    command: agent -server -advertise 34.194.97.9 -bootstrap-expect 2 -client 0.0.0.0 -retry-join 34.194.97.9 -retry-join 34.205.236.241
+    command: agent -server -advertise 34.194.97.9 -bootstrap-expect 2 -client 0.0.0.0 -retry-join 34.194.97.9 -retry-join 34.205.236.241 retry-join 34.238.66.141
 
 networks:
   postgres-backend:

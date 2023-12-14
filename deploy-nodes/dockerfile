@@ -9,9 +9,9 @@ RUN apt-get update && \
 RUN python3 -m venv /venv
 ENV PATH="/venv/bin:$PATH"
 
-COPY ./requirements.txt /requirements.txt
+COPY requirements.txt /requirements.txt
 RUN pip install --upgrade pip setuptools wheel && \
     pip install -r /requirements.txt
 
-COPY ./patroni.yml /patroni.yml
+COPY patroni.yml /patroni.yml
 ENTRYPOINT ["patroni", "patroni.yml"]

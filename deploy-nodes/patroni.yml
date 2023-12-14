@@ -40,7 +40,7 @@ postgresql:
         - host replication replicator 127.0.0.1/32 md5
         - host replication replicator 34.194.97.9/32 md5
         - host replication replicator 34.205.236.241/32 md5 
-       # - host replication replicator 10.128.0.99/32 md5
+        - host replication replicator 34.238.66.141/32 md5
         - host all all 0.0.0.0/0 md5
     authentication:
         replication:
