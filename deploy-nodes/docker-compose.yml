@@ -4,7 +4,7 @@ services:
     image: patroni:latest
     build:
       context: .
-      dockerfile: ./Dockerfile
+      dockerfile: ./dockerfile
     networks:
       - postgres-backend
     ports:
