@@ -61,7 +61,7 @@ services:
       - "8600:8600/udp"
     volumes:
       - ../../pg-cluster-volumes/consul-data:/data
-      - ./consul.d/server.hcl:/etc/consul.d/server.hcl
+      #- ./server.hcl:/etc/consul.d/server.hcl
     restart: unless-stopped
     command: agent -server -advertise 34.194.97.9 -bootstrap-expect 3 -client 0.0.0.0 -retry-join 34.194.97.9 -retry-join 34.205.236.241 -retry-join 34.238.66.141
 
