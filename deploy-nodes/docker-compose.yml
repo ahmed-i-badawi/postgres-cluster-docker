@@ -49,7 +49,7 @@ services:
     hostname: "${HOSTNAME}"
     environment:
       TZ: Asia/Riyadh
-      ui_config.enabled: true
+      ui_config.enabled: "true"
     ports:
       - "8300:8300"
       - "8301:8301"
