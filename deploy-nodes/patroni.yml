@@ -2,7 +2,7 @@ scope: cluster_1
 
 restapi:
     listen: 0.0.0.0:8008 
-    connect_address: 34.194.97.9:8008
+    connect_address: 172.31.18.199:8008
 
 bootstrap:
     dcs:
@@ -33,14 +33,14 @@ bootstrap:
 
 postgresql:
     listen: 0.0.0.0:5432
-    connect_address: 34.194.97.9:6432
+    connect_address: 172.31.18.199:6432
     config_dir: /config
     data_dir: /var/lib/postgresql/data
     pg_hba:
         - host replication replicator 127.0.0.1/32 md5
-        - host replication replicator 34.194.97.9/32 md5
-        - host replication replicator 34.205.236.241/32 md5 
-        - host replication replicator 34.238.66.141/32 md5
+        - host replication replicator 172.31.18.199/32 md5
+        - host replication replicator 172.31.17.50/32 md5 
+        - host replication replicator 172.31.26.100/32 md5
         - host all all 0.0.0.0/0 md5
     authentication:
         replication:
