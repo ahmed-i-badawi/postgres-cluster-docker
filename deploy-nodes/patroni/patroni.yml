@@ -29,7 +29,8 @@ bootstrap:
                 - createrole
                 - createdb
 
-
+consul:
+    host: 172.31.18.199:8500
 
 postgresql:
     listen: 0.0.0.0:5432
