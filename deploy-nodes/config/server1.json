@@ -5,7 +5,6 @@
         "enabled" : true
     },
     "data_dir": "/consul/data",
-    "bind_addr": "0.0.0.0",
     "addresses": {
         "http" : "0.0.0.0"
     },
