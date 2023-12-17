@@ -87,11 +87,11 @@ services:
     volumes:
      - ./config/client.json:/consul/config/client.json
      - ./certs/:/consul/config/certs/
-    networks:
-      - consul
+    # networks:
+    #   - consul
     command: "agent"
-
-networks:
-  #postgres-backend:
-  consul:
-    driver: host
+    network_mode: host
+# networks:
+#   #postgres-backend:
+#   consul:
+#     driver: host

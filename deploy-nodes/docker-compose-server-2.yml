@@ -72,11 +72,11 @@ services:
     volumes:
      - ./config/server2.json:/consul/config/server2.json
      - ./certs/:/consul/config/certs/
-    networks:
-      - consul
+    # networks:
+    #   - consul
     command: "agent -bootstrap-expect=3"
-
-networks:
-  #postgres-backend:
-  consul:
-    driver: host
+    network_mode: host
+# networks:
+#   #postgres-backend:
+#   consul:
+#     driver: host
