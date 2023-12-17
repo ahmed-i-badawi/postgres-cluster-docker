@@ -5,14 +5,14 @@
         "enabled" : true
     },
     "data_dir": "/consul/data",
-    "bind_addr": "34.194.97.9",
-    "advertise_addr": "34.194.97.9",
+    "bind_addr": "172.31.18.199",
+    "advertise_addr": "172.31.18.199",
     "addresses": {
         "http" : "0.0.0.0"
     },
     "retry_join":[
-        "34.205.236.241",
-        "34.238.66.141"
+        "172.31.17.50",
+        "172.31.26.100 "
     ],
     "encrypt": "aPuGh+5UDskRAbkLaXRzFoSOcSM+5vAK+NEYOWHJH7w=",
     "verify_incoming": false,
