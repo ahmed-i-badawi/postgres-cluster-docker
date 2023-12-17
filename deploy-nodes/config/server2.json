@@ -9,9 +9,13 @@
     "addresses": {
         "http" : "0.0.0.0"
     },
+    // "retry_join":[
+    //     "34.194.97.9",
+    //     "34.238.66.141"
+    // ],
     "retry_join":[
-        "34.194.97.9",
-        "34.238.66.141"
+        "172.31.18.199",
+        "172.31.26.100"
     ],
     "encrypt": "aPuGh+5UDskRAbkLaXRzFoSOcSM+5vAK+NEYOWHJH7w=",
     "verify_incoming": false,
