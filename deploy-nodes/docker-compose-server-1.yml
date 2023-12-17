@@ -94,4 +94,4 @@ services:
 networks:
   #postgres-backend:
   consul:
-    driver: bridge
+    driver: host
