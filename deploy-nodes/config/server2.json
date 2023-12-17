@@ -5,7 +5,8 @@
         "enabled" : true
     },
     "data_dir": "/consul/data",
-    "bind_addr": "0.0.0.0",
+    "bind_addr": "172.31.17.50",
+    "advertise_addr": "172.31.17.50",
     "addresses": {
         "http" : "0.0.0.0"
     },
