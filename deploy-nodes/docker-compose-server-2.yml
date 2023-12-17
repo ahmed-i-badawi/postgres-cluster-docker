@@ -70,7 +70,7 @@ services:
     container_name: consul-server2
     restart: unless-stopped
     volumes:
-     - ./server2.json:/consul/config/server2.json
+     - ./config/server2.json:/consul/config/server2.json
      - ./certs/:/consul/config/certs/
     networks:
       - consul
