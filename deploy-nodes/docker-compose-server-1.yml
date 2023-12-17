@@ -1,27 +1,27 @@
 version: '3'
 services:
-  # patroni:
-  #   image: patroni:latest
-  #   build:
-  #     context: .
-  #     dockerfile: ./dockerfile
-  #   networks:
-  #     - postgres-backend
-  #   ports:
-  #     - "8008:8008"
-  #     - "6432:5432"
-  #   user: postgres
-  #   volumes:
-  #     - ../../../pg-cluster-volumes/postgres-data:/var/lib/postgresql/data
-  #   environment:
-  #     TZ: Asia/Riyadh
-  #     PATRONI_NAME: member_${HOSTNAME}
-  #     PATRONI_POSTGRESQL_DATA_DIR: /var/lib/postgresql/data/node
-  #     PATRONI_CONSUL_HOST: http://34.194.97.9:8500
-  #     PATRONI_CONSUL_URL: http://34.194.97.9:8500/v1/
-  #     # PATRONI_CONSUL_HOST: http://consul-ip:8500
-  #     # PATRONI_CONSUL_URL: http://consul-ip:8500/v1/
-  #   restart: unless-stopped
+  patroni:
+    image: patroni:latest
+    build:
+      context: .
+      dockerfile: ./dockerfile
+    networks:
+      - postgres-backend
+    ports:
+      - "8008:8008"
+      - "6432:5432"
+    user: postgres
+    volumes:
+      - ../../../pg-cluster-volumes/postgres-data:/var/lib/postgresql/data
+    environment:
+      TZ: Asia/Riyadh
+      PATRONI_NAME: member_${HOSTNAME}
+      PATRONI_POSTGRESQL_DATA_DIR: /var/lib/postgresql/data/node
+      PATRONI_CONSUL_HOST: http://34.194.97.9:8500
+      PATRONI_CONSUL_URL: http://34.194.97.9:8500/v1/
+      # PATRONI_CONSUL_HOST: http://consul-ip:8500
+      # PATRONI_CONSUL_URL: http://consul-ip:8500/v1/
+    restart: unless-stopped
 
   # pgbouncer:
   #   image: edoburu/pgbouncer
@@ -80,7 +80,7 @@ services:
       - "8600:8600/udp"
     command: "agent -bootstrap-expect=3"
     network_mode: host
-    
+
   consul-client:
     image: hashicorp/consul:1.11.2
     container_name: consul-client
